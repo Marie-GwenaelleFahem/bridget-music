@@ -1,0 +1,23 @@
+h2 {
+    color: red;
+}
+
+.card-music {
+    margin: 0 auto;
+    width: 960px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+ul {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+li {
+    list-style: none;
+}
+
