@@ -1,10 +1,15 @@
 import React from "react";
+import '../styles/header.css'
 
 function Header() {
 
     return (
         <>
-            <h1>Créer votre playlist et partagez la !</h1>
+            <div className="header">
+                <h1>Créer votre playlist et partagez la !</h1>
+                <div></div>
+                <div></div>
+            </div>
         </>
     )
 }

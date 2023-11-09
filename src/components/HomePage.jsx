@@ -78,20 +78,22 @@ function HomePage() {
 
     return (
         <>
-            <h2>Les tendances du moment</h2>
             <div className="card-music">
-                {spotifyDatas.map((data) => 
-                    !!spotifyDatas && 0 < spotifyDatas.length ?
-                    <ul key={data.id}>
-                        <li>{data.track}</li>
-                        <li>{data.artist}</li>
-                        <li>{data.album}</li>
-                        <li>{data.year}</li>
-                    </ul>
+            <h2>Les tendances du moment</h2>
+                <div className="card-music_inner">
+                    {spotifyDatas.map((data) => 
+                        !!spotifyDatas && 0 < spotifyDatas.length ?
+                        <ul key={data.id}>
+                            <li>{data.track}</li>
+                            <li>{data.artist}</li>
+                            <li>{data.album}</li>
+                            <li>{data.year}</li>
+                        </ul>
 
-                    : console.log("Hide the money y'all !!")
-                    // <span>Pas de playlist disponible actuellement</span>
-                )}
+                        : console.log("Hide the money y'all !!")
+                        // <span>Pas de playlist disponible actuellement</span>
+                    )}
+                </div>
             </div>
         </>
     )
