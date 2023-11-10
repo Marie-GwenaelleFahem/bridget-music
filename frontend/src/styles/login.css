@@ -1,0 +1,78 @@
+.container{
+    width: 1200px;
+}
+
+.bienvenue{
+    width: 300px;
+    display: inline-block;
+}
+
+.ligne{
+    width: 80px;  
+    height: 3px;
+    margin-left: 0;
+    background: black;
+}
+
+p{
+    width: 479px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+button{
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: white;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+.connexion{
+    border-radius: 5px;
+    border: 1px solid #000;
+    width: 400px;
+    height: 400px;
+    float: right;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.connexion label{
+    margin-top: 10px;
+}
+
+.connexion button{
+    margin-top: 10px;
+}
+
+.connexion p{
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    width: 220px;
+}
+
+.ligne2{
+    width: 270px;  
+    height: 3px;
+
+    background: black;
+}
+
+.spotify{
+    border-radius: 20px;
+    border: 1px solid #3BD75F;
+    background: #3BD75F;
+}
