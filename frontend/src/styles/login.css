@@ -1,10 +1,16 @@
+body{
+    background-color: #242424;
+}
+
 .container{
     width: 1200px;
+    margin-left: 150px;
 }
 
 .bienvenue{
     width: 300px;
     display: inline-block;
+    margin-top: 65px;
 }
 
 .ligne{
@@ -24,7 +30,7 @@ p{
     line-height: normal;
 }
 
-button{
+.bienvenue button{
     border-radius: 20px;
     border: 1px solid #000;
     background: white;
@@ -33,13 +39,14 @@ button{
     font-style: normal;
     font-weight: 200;
     line-height: normal;
+
 }
 
 .connexion{
     border-radius: 5px;
     border: 1px solid #000;
     width: 400px;
-    height: 400px;
+    height: 500px;
     float: right;
     display: flex;
     flex-direction: column; 
@@ -48,10 +55,13 @@ button{
 
 .connexion label{
     margin-top: 10px;
+    margin-right: 100px;
 }
 
 .connexion button{
-    margin-top: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid #000;
 }
 
 .connexion p{
@@ -62,6 +72,13 @@ button{
     line-height: normal;
     text-decoration-line: underline;
     width: 220px;
+    
+}
+
+.connexion input{
+    border-radius: 20px;
+    height: 15px;
+    padding: 10px 30px 10px 30px;
 }
 
 .ligne2{
