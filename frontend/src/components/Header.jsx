@@ -1,14 +1,22 @@
-import React from "react";
-import '../styles/header.css'
+import React, { useState } from "react";
+import '../assets/styles/header.css'
 
-function Header() {
+function Header({user}) {
+    
 
     return (
         <>
             <div className="header">
-                <h1>Créer votre playlist et partagez la !</h1>
-                <div></div>
-                <div></div>
+                <h1>Bonjour {user} !</h1>
+                <span>Découvrir</span>
+                <div className="create-playlist">
+                    <span>Créer votre playlist</span>
+                    <div><span>+</span></div>
+                </div>
+                <div>
+                    <span>Vos playlists</span>
+
+                </div>
             </div>
         </>
     )
