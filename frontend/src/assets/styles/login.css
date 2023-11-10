@@ -1,0 +1,101 @@
+body{
+    background-color: #242424;
+}
+
+.container{
+    width: 1200px;
+    margin-left: 150px;
+}
+
+.bienvenue{
+    width: 300px;
+    display: inline-block;
+    margin-top: 65px;
+}
+
+.ligne{
+    width: 80px;  
+    height: 3px;
+    margin-left: 0;
+    background:#FFFF
+}
+
+p{
+    width: 479px;
+    color: #FFFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bienvenue button{
+    border-radius: 20px;
+    border: 1px solid #FFFF;
+    background: white;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+
+}
+
+h1{
+    color: #FFFF;
+}
+
+
+.connexion{
+    border-radius: 5px;
+    border: 1px solid #FFFF;
+    width: 400px;
+    height: 500px;
+    float: right;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.connexion label{
+    margin-top: 10px;
+    margin-right: 100px;
+    color: #FFFF;
+}
+
+.connexion button{
+    margin-top: 20px;
+    border-radius: 20px;
+
+}
+
+.connexion p{
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    width: 220px;
+    cursor: pointer;
+    
+}
+
+.connexion input{
+    border-radius: 20px;
+    height: 15px;
+    padding: 10px 30px 10px 30px;
+}
+
+.ligne2{
+    width: 270px;  
+    height: 3px;
+    background:#FFFF;
+}
+
+.spotify{
+    border-radius: 20px;
+    border: 1px solid #3BD75F;
+    background: #3BD75F;
+}
