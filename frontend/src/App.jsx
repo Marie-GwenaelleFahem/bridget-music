@@ -10,6 +10,12 @@ function App() {
     <div>
       <Login/>
     </div>
+
+    // <div className="App">
+    //   <Header />
+    //   <HomePage />
+    //   <Footer />
+    // </div>
   );
 }
 
