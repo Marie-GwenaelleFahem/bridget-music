@@ -1,6 +1,10 @@
+const cors = require('cors');
 const express = require("express");
+
 const app = express();
 const port = 3001;
+app.use(cors());
+
 let auth_token =
   "BQAMr-mIXGUIgc-lDYIwHFvJd3oQtIiZIQPz9UG-uJ6pCJmeg6G0R_uRTZr0oI5WcsbxAHV40-PIj0Ief3OkKN4fTcpIEMro4f95KyKn73mS11RYbS4";
 let auth_token_date = null;
@@ -12,7 +16,9 @@ async function requestToken() {
   const token = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
-      'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
+      Authorization:
+        "Basic " +
+        new Buffer.from(clientId + ":" + clientSecret).toString("base64"),
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
@@ -50,8 +56,9 @@ app.get("/search", async (req, res) => {
   try {
     const search = req.query.search; // Extracting the parameter from the query
     const type = req.query.type;
+
     if (!search) {
-      return res.status(400).json({ error: "search parameter is required" });
+      res.status(400).json({ error: "search parameter is required" });
     }
     await checkToken();
 
@@ -65,7 +72,7 @@ app.get("/search", async (req, res) => {
       }
     );
     const apiData = await apiResponse.json();
-    res.json({ apiData });
+    res.status(200).json({ response: apiData });
   } catch (error) {
     console.error("Error making request to external API:", error.message);
     res.status(500).json({ error: "Internal Server Error" });
