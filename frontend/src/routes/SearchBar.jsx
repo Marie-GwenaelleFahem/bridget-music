@@ -48,12 +48,9 @@ function SearchBar() {
       const sendRequest = () => {
         let dataSearchbar = searchValue
         const token = 'BQCfVhAjhw5TAPmOW-n65cubtXOoRP31CSRwbIFL6u0_ZlpTMt2mZo5Eziejk3owtChcCxlHV3CdEtzYwWPRKr0W82MNcIt45JwCgCgBJxHIoyaj2o0'
-        const url = `https://api.spotify.com/v1/search?q=${dataSearchbar}&type=track`
+        const url = `http://localhost:3001/v1/search?search=${dataSearchbar}&type=track`
         fetch(url, {
           method: 'GET',
-          headers: {
-            Authorization: `Bearer ${token}`
-          },
         })
         .then(
           response => {
