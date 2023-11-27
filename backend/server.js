@@ -12,7 +12,7 @@ async function requestToken() {
   const token = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
-      'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),git 
+      'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
