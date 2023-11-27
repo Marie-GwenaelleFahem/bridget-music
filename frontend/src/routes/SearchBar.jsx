@@ -1,5 +1,5 @@
 import React from 'react';
-// import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import { useState } from "react";
 import '../assets/styles/searchbar.css'
 
@@ -47,8 +47,7 @@ function SearchBar() {
 
       const sendRequest = () => {
         let dataSearchbar = searchValue
-        const token = 'BQCfVhAjhw5TAPmOW-n65cubtXOoRP31CSRwbIFL6u0_ZlpTMt2mZo5Eziejk3owtChcCxlHV3CdEtzYwWPRKr0W82MNcIt45JwCgCgBJxHIoyaj2o0'
-        const url = `http://localhost:3001/v1/search?search=${dataSearchbar}&type=track`
+        const url = `http://localhost:3001/search?search=${dataSearchbar}&type=artist,track`
         fetch(url, {
           method: 'GET',
         })
