@@ -1,8 +1,9 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
+app.use(cors());
 const port = 3001;
-let auth_token =
-  "BQAMr-mIXGUIgc-lDYIwHFvJd3oQtIiZIQPz9UG-uJ6pCJmeg6G0R_uRTZr0oI5WcsbxAHV40-PIj0Ief3OkKN4fTcpIEMro4f95KyKn73mS11RYbS4";
+let auth_token = null;
 let auth_token_date = null;
 
 const clientId = "017bcc3b1f6541a0b38ab18ecd8c1583";
