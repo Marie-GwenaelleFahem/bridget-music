@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import '../assets/styles/header.css'
 
 function Header({user}) {
@@ -10,7 +11,7 @@ function Header({user}) {
                 <h1>Bonjour {user} !</h1>
                 <span>Découvrir</span>
                 <div className="create-playlist">
-                    <span>Créer votre playlist</span>
+                    <Link to="/search"><span>Créer votre playlist</span></Link>
                     <div><span>+</span></div>
                 </div>
                 <div>

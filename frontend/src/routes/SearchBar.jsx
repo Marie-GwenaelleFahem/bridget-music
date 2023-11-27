@@ -1,7 +1,7 @@
 import React from 'react';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+// import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import { useState } from "react";
-import '../styles/searchbar.css'
+import '../assets/styles/searchbar.css'
 
 
 function SearchBar() {
@@ -50,7 +50,7 @@ function SearchBar() {
         const token = 'BQCfVhAjhw5TAPmOW-n65cubtXOoRP31CSRwbIFL6u0_ZlpTMt2mZo5Eziejk3owtChcCxlHV3CdEtzYwWPRKr0W82MNcIt45JwCgCgBJxHIoyaj2o0'
         const url = `https://api.spotify.com/v1/search?q=${dataSearchbar}&type=track`
         fetch(url, {
-          methode: 'GET',
+          method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`
           },
