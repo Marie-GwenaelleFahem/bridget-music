@@ -5,11 +5,12 @@ import App from './App.jsx'
 import HomePage from './components/HomePage.jsx'
 import './index.css'
 import Login from './components/Login.jsx'
+import SignUp from './components/SignUp.jsx'
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element: <Login />
+    element: <SignUp />
   }
 ])
 

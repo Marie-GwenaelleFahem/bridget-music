@@ -1,0 +1,60 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1{
+    margin-left: 35px
+}
+
+
+
+label{
+    display: block;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+input{
+    border-radius: 20px;
+    height: 15px;
+    padding: 10px 30px 10px 30px;
+    margin-top: 3px;
+}
+
+
+form{
+    margin-bottom: 40px;
+    margin-left: 6px;
+}
+
+a{
+
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color:#3BD75F; 
+    color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.go{
+    padding: 10px;
+}
+
+.google{
+    background-color: red;
+    padding:10px 15px 10px 15px;
+}
