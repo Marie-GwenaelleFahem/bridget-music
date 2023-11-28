@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../assets/styles/searchbar.css'
 
 
@@ -8,13 +8,32 @@ function SearchBar() {
   const [array, setArray] = useState([]);
   const [items, setItems] = useState([]);
   const [searchValue, setSearchValue] = useState([]);
+  const [timer, setTimer] = useState(null);
 
     let playlist = []
 
       const handleSearch = (value) => {
+        if( value == "" ) {
+          return;
+        }
         setSearchValue(value)
+        if (timer) {
+          clearTimeout(timer);
+        };
+        const newTimer = setTimeout(() => {
+          sendRequest(value)
+        }, "1500");
+        setTimer(newTimer);
       };
-  
+      
+      useEffect(() => {
+        return () => {
+          if (timer) {
+            clearTimeout(timer);
+          }
+        };
+      }, [timer]);
+
       const handleOnSelect = (item) => {
         let isUnique = true
         
@@ -31,13 +50,12 @@ function SearchBar() {
         }
       }
       const DataPlaylist = ({data}) => {
-        const dataArray = []
         return (
           <>
           <div className='dataPlaylist'>
             {data.map(item => (
             <div key={item.id}>
-              <p>Name: {item.name}</p>
+              <p>{item.name}</p>
             </div>
         ))}
           </div>
@@ -45,9 +63,9 @@ function SearchBar() {
         )
       }
 
-      const sendRequest = () => {
+      const sendRequest = (requestParam) => {
         let dataSearchbar = searchValue
-        const url = `http://localhost:3001/search?search=${dataSearchbar}&type=artist,track`
+        const url = `http://localhost:3001/search?search=${requestParam}&type=track`
         fetch(url, {
           method: 'GET',
         })
