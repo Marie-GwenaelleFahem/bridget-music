@@ -7,8 +7,8 @@ const port = process.env.PORT;
 let auth_token = null;
 let auth_token_date = null;
 
-const clientId = "017bcc3b1f6541a0b38ab18ecd8c1583";
-const clientSecret = "e6e72c25f462437184e8c237939dd239";
+const clientId = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
 
 async function requestToken() {
   const token = await fetch("https://accounts.spotify.com/api/token", {
@@ -84,3 +84,5 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   console.log(auth_token);
 });
+
+// test
