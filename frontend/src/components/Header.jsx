@@ -11,8 +11,8 @@ function Header({user}) {
                 <h1>Bonjour {user} !</h1>
                 <span>Découvrir</span>
                 <div className="create-playlist">
-                    <Link to="/search"><span>Créer votre playlist</span></Link>
-                    <div><span>+</span></div>
+                    <Link to="/playlist"><span>Créer votre playlist <span>+</span></span></Link>
+                    
                 </div>
                 <div>
                     <span>Vos playlists</span>

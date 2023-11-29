@@ -1,0 +1,79 @@
+    .playlistContainer{
+        display: flex;
+        height: 100vh;
+    }
+    
+    .globalComponent {
+        width: 100%;
+        display: flex;
+        align-items:  center;
+        flex-direction: column;
+        margin: 10px;
+        padding: 10px;
+        background-color: #242424;
+        border-radius: 10px;
+    }
+
+    .searchBarComponent{
+        width: 800px;
+        padding: 20px;
+    }
+    
+    .playlistComponent {
+    width: 800px;
+    display: flex;
+    background-color: #33332f;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 15px;
+    margin: 20px;
+}
+    
+
+.ffXrxx ul {
+    width: 100%;
+    border: none;
+    
+}
+
+.formContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+
+}
+#labelNamePlaylist{
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+#buttonAddPlaylist{
+    width: fit-content;
+}
+#inputNamePlaylist {
+  background-color: #242424;
+  border: 1px solid #646cff;
+  padding: 10px;
+  width: auto;
+  border-radius: 15px;
+  color: white;
+  margin: 20px;
+}
+.dataPlaylist {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 10px;
+}
+
+
+
+.itemPlaylist {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin: 5px;
+}
