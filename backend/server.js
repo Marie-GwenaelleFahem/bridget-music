@@ -1,8 +1,9 @@
+require('dotenv').config()
 const cors = require('cors');
 const express = require("express");
 const app = express();
 app.use(cors());
-const port = 3001;
+const port = process.env.PORT;
 let auth_token = null;
 let auth_token_date = null;
 
