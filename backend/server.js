@@ -18,6 +18,9 @@ async function requestToken() {
     },
     body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
   });
+  if(!token.ok) {
+    throw new Error("error requesting token")
+  }
   let tokenJson = await token.json();
 
   const expiresInMilliseconds = tokenJson.expires_in * 1000; // convert seconds to milliseconds
