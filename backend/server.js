@@ -1,8 +1,14 @@
 const cors = require('cors');
 const express = require("express");
+const cors = require('cors');
+=======
+
 
 const app = express();
+app.use(cors());
 const port = 3001;
+let auth_token = null;
+=======
 app.use(cors());
 
 let auth_token =
