@@ -52,7 +52,7 @@ app.get("/test", async (req, res) => {
 // Middleware to parse JSON requests
 app.use(express.json());
 
-// Sample route
+// search route
 app.get("/search", async (req, res) => {
   try {
     const search = req.query.search; // Extracting the parameter from the query
@@ -85,4 +85,105 @@ app.listen(port, () => {
   console.log(auth_token);
 });
 
-// test
+
+ // Route Artiste
+ app.get("/artist/:id", async (req, res) => {
+  try {
+    const artistId = req.params.id;
+
+    // Vérif token
+    await checkToken();
+
+    // requête
+    const apiResponse = await fetch(`https://api.spotify.com/v1/artists/${artistId}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${auth_token}`,
+      },
+    });
+
+    // Vérifier si la réponse est réussie (statut 200)
+    if (apiResponse.status === 200) {
+      const artistData = await apiResponse.json();
+      res.json({ artist: artistData });
+    } else {
+      // Gérer les erreurs si la réponse n'est pas réussie
+      console.error(`Error fetching artist data. Status: ${apiResponse.status}`);
+      res.status(apiResponse.status).json({ error: "Unable to fetch artist data" });
+    }
+  } catch (error) {
+    console.error("Error making request to external API:", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// Route récupérer Playlist
+app.get("/playlist/:id", async (req, res) => {
+  try {
+    const playlistId = req.params.id;
+
+    // Vérif token
+    await checkToken();
+
+    // requête
+    const apiResponse = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${auth_token}`,
+      },
+    });
+
+    // Vérifier si la réponse est réussie (statut 200)
+    if (apiResponse.status === 200) {
+      const playlistData = await apiResponse.json();
+      res.json({ playlist: playlistData });
+    } else {
+      // Gérer les erreurs si la réponse n'est pas réussie
+      console.error(`Error fetching playlist data. Status: ${apiResponse.status}`);
+      res.status(apiResponse.status).json({ error: "Unable to fetch playlist data" });
+    }
+  } catch (error) {
+    console.error("Error making request to external API:", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+// Route créer playlist
+app.post("/playlist/create", async (req, res) => {
+  try {
+    // Récupérer les données de la requête POST
+    const { user_id, name, public, collaborative, description } = req.body;
+
+    // Vérif token
+    await checkToken();
+
+    // requête
+    const apiResponse = await fetch(`https://api.spotify.com/v1/users/${user_id}/playlists`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${auth_token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        public: public || true, // Si non spécifié, par défaut la playlist sera publique
+        collaborative: collaborative || false, // Si non spécifié, par défaut la playlist ne sera pas collaborative
+        description,
+      }),
+    });
+
+    // Vérifier si la réponse est réussie (statut 201)
+    if (apiResponse.status === 201) {
+      const playlistData = await apiResponse.json();
+      res.status(201).json({ playlist: playlistData });
+    } else {
+      // Gérer les erreurs si la réponse n'est pas réussie
+      console.error(`Error creating playlist. Status: ${apiResponse.status}`);
+      res.status(apiResponse.status).json({ error: "Unable to create playlist" });
+    }
+  } catch (error) {
+    console.error("Error making request to external API:", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
