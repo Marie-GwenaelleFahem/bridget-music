@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import '../assets/styles/feed.css';
-
+import SearchBar from "../routes/SearchBar";
 
 function Feed() {
 
@@ -91,28 +91,19 @@ function Feed() {
     return (
         <>
             <div className="card-music">
-                <h2>Les tendances du moment</h2>
+                <SearchBar />
+                <h2>Les playlists du moment</h2>
                 <div className="card-music_inner">
-                    {spotifyDatas.map((data) => 
-                        !!spotifyDatas && 0 < spotifyDatas.length ?
-                        <ul key={data.id}>
-                            {/* <li>{data.img}</li> */}
-                            <li>{data.track}</li>
-                            <li>{data.artist}</li>
-                            {/* <li>{data.album}</li>
-                            <li>{data.year}</li> */}
-                        </ul>
-
-                        : console.log("Hide the money y'all !!")
-                        // <span>Pas de playlist disponible actuellement</span>
-                    )}
+                    <div><span>Pop</span></div>
+                    <div><span>Rock</span></div>
+                    <div><span>Rap</span></div>
                 </div>
                 <div className="playlist-votes">
                         <h2>Votez pour la playlist de la semaine</h2>
                         <div className="playlist-votes_inner">
-                            <div className="playlist1">{playlist1.playlistName}</div>
+                            <div className="playlist1"></div>
                             <span>VS</span>
-                            <div className="playlist2">{playlist2.playlistName}</div>
+                            <div className="playlist2"></div>
                         </div>
                 </div>
             </div>

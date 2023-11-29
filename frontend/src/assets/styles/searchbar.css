@@ -1,26 +1,13 @@
-.searchbarComponent {
-    display: flex ;
-    justify-content: center;
-    }
-    
-    .searchbar {
-    width: 400px;
-    }
-    
-    .playlistComponent {
-    display: flex;
-    gap: 10px;	
-    }
-    
-    .arrayComponent {
-    display: flex;
-    flex-flow: wrap row;
-    align-items: center;
-    width: 400px;
-    border : solid 1px black;
-    }
-    
-    .dataPlaylist {
-    text-align: left;
-    }
-    
+input{
+background-color: #242424;
+border: 1px solid #646cff;
+padding: 10px;
+border-radius: 15px;
+color: white;
+margin: 20px;
+width: 600px;
+}
+
+.searchbarComponent{
+    width: 100%;
+}

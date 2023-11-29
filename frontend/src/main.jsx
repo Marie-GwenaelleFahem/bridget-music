@@ -6,7 +6,7 @@ import HomePage from './routes/HomePage.jsx'
 import './index.css'
 
 import SearchBar from './routes/SearchBar.jsx'
-
+import Playlist from './routes/Playlist.jsx'
 
 
 const router = createBrowserRouter([
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/search",
-    element: <SearchBar />,
+    path: "/playlist",
+    element: <Playlist/>,
   },
 ])
 
