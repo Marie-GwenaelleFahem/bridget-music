@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomePage from './routes/HomePage.jsx'
 import './index.css'
 
-import SearchBar from './routes/SearchBar.jsx'
+import SearchBar from './components/SearchBar.jsx'
 import Playlist from './routes/Playlist.jsx'
 
 

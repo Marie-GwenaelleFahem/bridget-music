@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import '../assets/styles/feed.css';
-import SearchBar from "../routes/SearchBar";
+import SearchBar from "./SearchBar";
 
 function Feed() {
 

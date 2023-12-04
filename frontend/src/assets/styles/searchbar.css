@@ -1,13 +1,37 @@
-input{
-background-color: #242424;
-border: 1px solid #646cff;
-padding: 10px;
-border-radius: 15px;
-color: white;
-margin: 20px;
-width: 600px;
+.searchbarComponent {
+    padding: 30px;
+    display: flex ;
+    gap: 20px;
 }
 
-.searchbarComponent{
-    width: 100%;
+.searchbarComponent input {
+    width: 800px;
+    padding: 0px 0px 0px 13px;
+    border: black;
+    border-radius: 5px;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
 }
+    
+.searchbar {
+    width: 400px;
+}
+    
+.playlistComponent {
+    display: flex;
+    gap: 10px;	
+}
+    
+.arrayComponent {
+    display: flex;
+    flex-flow: wrap row;
+    align-items: center;
+    width: 400px;
+    border : solid 1px black;
+}
+    
+.dataPlaylist {
+    text-align: left;
+}
+    
